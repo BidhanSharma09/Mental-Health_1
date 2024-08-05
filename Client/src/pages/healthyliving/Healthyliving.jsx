@@ -17,7 +17,7 @@ const Healthyliving = () => {
             Introduction
           </h2>
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGws7vSxJ7MrpiIMR40s3G7HvyKIilhV8XWA&s" // Replace with your image path
+            src="https://th.bing.com/th/id/R.2e40b892590b28f8d2873f771c371aa7?rik=USeFIzmdmifQTg&pid=ImgRaw&r=0" // Replace with your image path
             alt="Introduction to Healthy Living"
             className="w-full h-auto mb-4 rounded-lg object-cover"
           />
@@ -31,7 +31,7 @@ const Healthyliving = () => {
             Nutrition
           </h2>
           <img
-            src="/images/nutrition.jpg" // Replace with your image path
+            src="https://www.healthworkscollective.com/wp-content/uploads/2021/06/shutterstock_403023076.jpg" // Replace with your image path
             alt="Nutrition"
             className="w-full h-auto mb-4 rounded-lg object-cover"
           />
@@ -45,7 +45,7 @@ const Healthyliving = () => {
             Exercise
           </h2>
           <img
-            src="/images/exercise.jpg" // Replace with your image path
+            src="https://sbtreatment.com/wp-content/uploads/2018/09/bigstock-Summer-fitness-healthy-active-228735583.jpg" // Replace with your image path
             alt="Exercise"
             className="w-full h-auto mb-4 rounded-lg object-cover"
           />
@@ -59,7 +59,7 @@ const Healthyliving = () => {
             Mental Health
           </h2>
           <img
-            src="/images/mental-health.jpg" // Replace with your image path
+            src="https://static.vecteezy.com/system/resources/previews/000/286/901/original/vector-illustration-of-healthy-lifestyle.jpg" // Replace with your image path
             alt="Mental Health"
             className="w-full h-auto mb-4 rounded-lg object-cover"
           />
@@ -73,7 +73,7 @@ const Healthyliving = () => {
             Preventive Healthcare
           </h2>
           <img
-            src="/images/preventive-healthcare.jpg" // Replace with your image path
+            src="https://th.bing.com/th/id/OIP.zhiUgVKCDDpUPieAN8A56gHaE7?rs=1&pid=ImgDetMain" // Replace with your image path
             alt="Preventive Healthcare"
             className="w-full h-auto mb-4 rounded-lg object-cover"
           />
@@ -87,7 +87,7 @@ const Healthyliving = () => {
             Healthy Habits
           </h2>
           <img
-            src="/images/healthy-habits.jpg" // Replace with your image path
+            src="https://th.bing.com/th/id/R.f25812fbf27d0346970af9dad3eefa89?rik=QyRHQsGMkb25mg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fdi7%2f6Rp%2fdi76RpzAT.jpg&ehk=%2fEB9R4qa9O2Y%2bCBhawcirjn7dWleRFXSkY48AQUu08E%3d&risl=1&pid=ImgRaw&r=0" // Replace with your image path
             alt="Healthy Habits"
             className="w-full h-auto mb-4 rounded-lg object-cover"
           />
@@ -101,7 +101,7 @@ const Healthyliving = () => {
             Conclusion
           </h2>
           <img
-            src="/images/conclusion.jpg" // Replace with your image path
+            src="https://totalgymdirect.com/total-gym-blog/wp-content/uploads/healthy-lifestyle-commitment.jpeg" // Replace with your image path
             alt="Conclusion"
             className="w-full h-auto mb-4 rounded-lg object-cover"
           />
