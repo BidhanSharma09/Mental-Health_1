@@ -31,6 +31,7 @@ const Navbar = () => {
           <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/mentalhealth")}>Mental Health</li>
           <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/healthyliving")}>Healthy Living</li>
           <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/blog")}>Articles</li>
+          <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/addarticle")}>Add New Articles</li>
           <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/forum")}>Forum</li>
           <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/events")}>Campaign</li>
           <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/resources")}>Business Ads</li>

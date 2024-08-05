@@ -5,6 +5,7 @@ import Register from './pages/User/Register'
 import Login from './pages/User/Login'
 import Mentalhealth from './pages/mental health/Mentalhealth'
 import Healthyliving from './pages/healthyliving/healthyliving'
+import AddArticle from './pages/AddArticle'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <Route path = '/login' element={<Login/>}/>
       <Route path = '/mentalhealth' element={<Mentalhealth/>}/>
       <Route path = '/healthyliving' element={<Healthyliving/>}/>
+      <Route path = '/addarticle' element={<AddArticle/>}/>
 
       
 
