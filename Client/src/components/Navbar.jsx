@@ -30,7 +30,7 @@ const Navbar = () => {
           <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/")}>Home</li>
           <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/mentalhealth")}>Mental Health</li>
           <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/healthyliving")}>Healthy Living</li>
-          <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/blog")}>Articles</li>
+          <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/articles")}>Articles</li>
           <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/addarticle")}>Add New Articles</li>
           <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/forum")}>Forum</li>
           <li className="cursor-pointer hover:text-gray-300" onClick={() => navigate("/events")}>Campaign</li>
@@ -38,12 +38,12 @@ const Navbar = () => {
           
           {!token ? (
             <>
-              <li
+              {/* <li
                 className="underline cursor-pointer hover:text-gray-300"
                 onClick={() => navigate("/register")}
               >
                 Register here?
-              </li>
+              </li> */}
               <li
                 className="underline cursor-pointer hover:text-gray-300"
                 onClick={() => navigate("/login")}

@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import AuthContext from '../../context/AuthContext'; // Import AuthContext
 
 const Login = () => {
+  const { setIsAuthenticated } = useContext(AuthContext); // Use the context
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -17,8 +21,6 @@ const Login = () => {
     });
   };
 
-  const navigate = useNavigate()
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -26,9 +28,10 @@ const Login = () => {
       console.log(response.data);
       const { token } = response.data;
       localStorage.setItem('token', token); // Store the token in local storage
+
+      setIsAuthenticated(true); // Update the authentication state
       toast.success('Logged in successfully!');
-      navigate('/')
-      // Redirect or perform other actions after successful login
+      navigate('/');
     } catch (error) {
       console.error('There was an error logging in!', error);
       toast.error('There was an error logging in, Please register first.');
@@ -70,6 +73,12 @@ const Login = () => {
             className="w-full bg-indigo-600 text-white p-2 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Login
+          </button>
+          <button
+            type="submit" onClick={() => navigate("/register")}
+            className="mt-3 w-full bg-indigo-600 text-white p-2 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Register
           </button>
         </form>
       </div>

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-// Define the schema for the article
 const articleSchema = new Schema({
   title: {
     type: String,
@@ -36,7 +35,6 @@ const articleSchema = new Schema({
   }
 });
 
-// Create the model from the schema
 const Article = mongoose.model('Article', articleSchema);
 
 module.exports = Article;

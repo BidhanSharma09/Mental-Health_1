@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios'; // Import Axios
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -12,6 +13,8 @@ const AddArticle = () => {
     image: '',
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setArticle({
@@ -22,24 +25,40 @@ const AddArticle = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
+    const token = localStorage.getItem('token'); // Get the token from local storage
+
+    if (!token) {
+      alert('You must be logged in to post an article.');
+      navigate('/login'); // Redirect to login if not authenticated
+      return;
+    }
+
     if (!article.title || !article.authorName || !article.authorEmail || !article.content) {
       alert('Please fill out all required fields.');
       return;
     }
-  
+
     try {
-      const response = await axios.post('http://localhost:5000/api/articles/postarticle', {
-        title: article.title,
-        author: {
-          name: article.authorName,
-          email: article.authorEmail,
+      const response = await axios.post(
+        'http://localhost:5000/api/articles/postarticle',
+        {
+          title: article.title,
+          author: {
+            name: article.authorName,
+            email: article.authorEmail,
+          },
+          content: article.content,
+          image: article.image,
         },
-        content: article.content,
-        image: article.image,
-      });
-  
-      if (response.status === 201) {  // status 201 for a successful creation
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Include the token in the headers
+          },
+        }
+      );
+
+      if (response.status === 201) { // status 201 for a successful creation
         alert('Article added successfully!');
         setArticle({
           title: '',
@@ -56,7 +75,6 @@ const AddArticle = () => {
       alert('An error occurred. Please try again.');
     }
   };
-  
 
   return (
     <>

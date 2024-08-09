@@ -6,10 +6,14 @@ import Login from './pages/User/Login'
 import Mentalhealth from './pages/mental health/Mentalhealth'
 import Healthyliving from './pages/healthyliving/healthyliving'
 import AddArticle from './pages/AddArticle'
+import ProtectedRoute from './pages/Protectedroute'
+import { AuthProvider } from './context/AuthContext'
+import Articlepage from './pages/Articlepage'
 
 function App() {
 
   return (
+    <AuthProvider>
     <BrowserRouter>
     <Routes>
       
@@ -19,11 +23,12 @@ function App() {
       <Route path = '/mentalhealth' element={<Mentalhealth/>}/>
       <Route path = '/healthyliving' element={<Healthyliving/>}/>
       <Route path = '/addarticle' element={<AddArticle/>}/>
-
-      
-
+      <Route path = '/articles' element={<Articlepage/>}/>
+      <Route path = '/protectedroute' element={<ProtectedRoute><AddArticle /></ProtectedRoute>} />
+     
     </Routes>
     </BrowserRouter>
+    </AuthProvider>
   )
 }
 

@@ -4,14 +4,12 @@ const createArticle = async (req, res) => {
     try {
         const { title, author, content, image } = req.body;
 
-        // Validate input
         if (!title || !author || !author.name || !author.email || !content) {
             return res.status(400).json({
                 message: 'Title, author name, author email, and content are required',
             });
         }
 
-        // Create a new article
         const newArticle = new Article({
             title,
             author: {
@@ -20,6 +18,7 @@ const createArticle = async (req, res) => {
             },
             content,
             image,
+            status: 'published' // Set the default status to 'draft'
         });
 
         await newArticle.save();
@@ -36,7 +35,19 @@ const createArticle = async (req, res) => {
     }
 };
 
-// Export the controller functions
+const getArticles = async (req, res) => {
+    try {
+        const articles = await Article.find({ status: 'published' }); // Fetch only published articles
+        res.status(200).json(articles);
+    } catch (error) {
+        console.error('Error fetching articles:', error);
+        res.status(500).json({
+            message: 'Server error. Please try again later.',
+        });
+    }
+};
+
 module.exports = {
     createArticle,
+    getArticles,
 };
